@@ -1,0 +1,28 @@
+PAREI DE PROGRAMAR EM 51:15
+
+------- ANOTAÇÕES SQL NO NODEJS VÍDEO -------
+- Minuto 30:43 do vídeo: Explica como roda as migrations para criar a tabela no banco.
+- Minuto 32:55 do vídeo: Explica como altera os campos da migration caso seja necessário(por exemplo, mudar um atributo).
+- Minuto 34:32 do vídeo(~36:13 é mais completo): Começa a explicação de como alterar a coluna(adicionar, no caso). Vai ser útil para implementar as FK's depois
+- Minuto 43:35 do vídeo: Mostra como está estruturado o arquivo routes.js. É interessante observar a estrutura para realizar uma
+melhor organização do código.
+- Minuto 43:51 do vídeo: Mostra como está estruturado o arquivo de controller do Usuario. É interessante observar a estrutura para realizar uma
+melhor organização do código.
+
+
+COMANDO PARA CRIAR MIGRATION
+npx sequelize-cli migration:create --name=<oqueamigrationfaz>
+
+COMANDO PARA CRIAR A TABELA DA MIGRATION NO BANCO DE DADOS
+npx sequelize-cli db:migrate
+
+comando para dar rollback até uma migration específica
+npx sequelize-cli db:migrate:undo:all --to nomedamigration
+
+
+------- ANOTAÇÕES SOBRE O PRÓPRIO PROJETO -------
+- Para criar a chave, será criada uma classe Codigo com um método estático. Este método terá o nome de gerarCodigo, onde será possível
+gerar um código para o usuário.
+
+- DÚVIDA: Já que o endereço e o usuário estão relacionados, como criar primeiro o endereço e depois o próprio usuário? 
+ A RESPOSTA PARA ESTA DÚVIDA PODE ESTAR NO MINUTO 53:58 do vídeo.

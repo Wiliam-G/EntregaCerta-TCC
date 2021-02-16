@@ -1,0 +1,8 @@
+{
+  "name": "autenticador-entregador",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

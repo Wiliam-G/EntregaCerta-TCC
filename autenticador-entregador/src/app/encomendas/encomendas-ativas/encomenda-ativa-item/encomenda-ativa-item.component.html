@@ -1,0 +1,21 @@
+<ion-item>
+  <ion-label>
+    <h2>Codigo da encomenda: {{ encomenda.codigoEncomenda }}</h2>
+    <h3>Destinatário: {{ encomenda.destinatario }}</h3>
+    <div>
+      Estado: {{ encomenda.endereco.estado.toUpperCase() }} | Cidade:
+      {{ encomenda.endereco.cidade.toUpperCase() }} | Bairro
+      {{ encomenda.endereco.bairro.toUpperCase() }}
+    </div>
+    <div>
+      Endereço: {{ encomenda.endereco.nome }} nº
+      {{ encomenda.endereco.cep }}
+    </div>
+    <div>CEP: {{ encomenda.endereco.cep }}</div>
+    <ion-buttons class="ion-justify-content-center ion-margin-top">
+      <ion-button color="primary" (click)="detalharEncomenda()"
+        >Detalhes</ion-button
+      >
+    </ion-buttons>
+  </ion-label>
+</ion-item>

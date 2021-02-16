@@ -1,0 +1,15 @@
+<div>
+  <div>{{ editable ? "Escolha de 1 a 5 estrelas para classificar" : "" }}</div>
+  <span *ngFor="let star of starsList; let i = index">
+    <ion-icon
+      name="star-outline"
+      [ngClass]="stars === 0 ? 'not-rated' : ''"
+      *ngIf="stars < star"
+      (click)="onStarClick(star)"
+      >{{ star }}</ion-icon
+    >
+    <ion-icon name="star" *ngIf="stars >= star" (click)="onStarClick(star)">{{
+      star
+    }}</ion-icon>
+  </span>
+</div>

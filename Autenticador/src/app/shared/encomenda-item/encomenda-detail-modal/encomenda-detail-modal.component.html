@@ -1,0 +1,80 @@
+<ion-toolbar>
+  <ion-title>Encomenda detalhe</ion-title>
+  <ion-buttons slot="primary">
+    <ion-button (click)="onClose()">
+      <ion-icon name="close"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+</ion-toolbar>
+
+<ion-content>
+  <ion-grid class="ion-padding">
+    <ion-row>
+      <ion-col>
+        <ion-text> Destinatário: {{ encomenda.destinatario.nome }} </ion-text>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="recebida">
+      <ion-col>
+        <ion-text> Recebedor: {{ encomenda.recebedor.nome }} </ion-text>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-text>
+          Código de rastreio: {{ encomenda.codigoEncomenda }}
+        </ion-text>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-text>
+          Data de envio:
+          {{
+            encomenda.dataEnvio == null
+              ? "Ainda não enviado"
+              : (encomenda.dataEnvio | date)
+          }}
+        </ion-text>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-text>
+          Data de entrega: {{ encomenda.dataEntregaPrevista | date }}
+        </ion-text>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-text>
+          Transportadora: {{ encomenda.empresa.nomeEmpresa }}
+        </ion-text>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="recebida">
+      <ion-col>
+        <ion-text>Entregador: {{ encomenda.funcionario.nome }} </ion-text>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-text>
+          Endereço:
+          {{ encomenda.endereco.rua + " - " + encomenda.endereco.numero }}
+        </ion-text>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="encomenda.dataRecebimento">
+      <ion-col>
+        <div *ngFor="let avaliacao of encomenda.avaliacoes">
+          <app-avaliacao
+          *ngIf="avaliacao.dataAvaliacao"
+            [avaliacao]="avaliacao"
+            [editable]="false"
+          ></app-avaliacao>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

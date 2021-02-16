@@ -1,0 +1,23 @@
+<ion-content>
+  <ion-grid>
+    <ion-row *ngFor="let avaliacao of avaliacoes">
+      <ion-col>
+        <app-avaliacao
+          (avaliacaoUpdated)="avaliacaoUpdated($event)"
+          [editable]="true"
+          [avaliacao]="avaliacao"
+        ></app-avaliacao>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<!-- <ion-list>
+  <ion-item *ngFor="let avaliacao of avaliacoes">
+    <app-avaliacao
+      (avaliacaoUpdated)="avaliacaoUpdated($event)"
+      [editable]="true"
+      [avaliacao]="avaliacao"
+    ></app-avaliacao>
+  </ion-item>
+</ion-list> -->

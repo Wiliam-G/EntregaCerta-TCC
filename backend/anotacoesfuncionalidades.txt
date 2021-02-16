@@ -1,0 +1,6 @@
+--- TESTE DE QUERY DE RELACIONAMENTOS ---
+Usuario - Endereço => OK
+Empresa - Funcionario => OK
+Funcionario - Encomenda => OK
+Encomenda - Entrega => OK
+Usuario - Encomenda => NOT OK

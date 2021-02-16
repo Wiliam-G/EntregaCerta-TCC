@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="primary">
+      <ion-button (click)="newEndereco()">
+        <ion-icon name="add"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Enderecos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="enderecoAtivo" class="ion-text-center endereco-ativo">
+    <h5>Endereço ativo</h5>
+    <app-endereco-item
+      [endereco]="enderecoAtivo"
+      [isUnique]="isUnique"
+      (enderecoChanged)="getEnderecos()"
+    ></app-endereco-item>
+  </div>
+  <app-endereco-item
+    *ngFor="let endereco of enderecos"
+    [endereco]="endereco"
+    [isUnique]="isUnique"
+    (enderecoChanged)="getEnderecos()"
+  ></app-endereco-item>
+</ion-content>

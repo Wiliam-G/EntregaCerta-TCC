@@ -1,0 +1,105 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="primary">
+      <ion-button (click)="cancel()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Novo Endereco</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- <h4 *ngIf="!endereco" class="ion-text-center">Selecione sua localização</h4> -->
+
+  <app-location-picker
+    [selectedLocationImage]="selectedLocationImage"
+    (locationPick)="locationPick($event)"
+    [showPreview]="true"
+  ></app-location-picker>
+
+  <ion-grid *ngIf="endereco">
+    <ion-row>
+      <ion-item>
+        <ion-label position="floating">Rua</ion-label>
+        <ion-input disabled [(ngModel)]="endereco.rua"></ion-input>
+      </ion-item>
+    </ion-row>
+    <ion-row>
+      <ion-item>
+        <ion-label position="floating">Numero</ion-label>
+        <ion-input [(ngModel)]="endereco.numero"></ion-input>
+      </ion-item>
+    </ion-row>
+    <ion-row>
+      <ion-item>
+        <ion-label position="floating">CEP</ion-label>
+        <ion-input disabled [(ngModel)]="endereco.cep"></ion-input>
+      </ion-item>
+    </ion-row>
+    <ion-row>
+      <ion-item>
+        <ion-label position="floating">bairro</ion-label>
+        <ion-input disabled [(ngModel)]="endereco.bairro"></ion-input>
+      </ion-item>
+    </ion-row>
+    <ion-row>
+      <ion-item>
+        <ion-label position="floating">cidade</ion-label>
+        <ion-input disabled [(ngModel)]="endereco.cidade"></ion-input>
+      </ion-item>
+    </ion-row>
+    <ion-row>
+      <ion-item>
+        <ion-label position="floating">estado</ion-label>
+        <ion-input disabled [(ngModel)]="endereco.estado"></ion-input>
+      </ion-item>
+    </ion-row>
+    <ion-row>
+      <ion-col class="ion-text-center">
+        <ion-button (click)="addEndereco()" [disabled]="!endereco.numero">
+          Cadastrar endereco
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- <ion-grid [formGroup]="form">
+    <ion-row>
+      <ion-item>
+        <ion-label position="floating">Rua</ion-label>
+        <ion-input [(formControlName="rua")]></ion-input>
+      </ion-item>
+    </ion-row>
+    <ion-row>
+      <ion-item>
+        <ion-label position="floating">Numero</ion-label>
+        <ion-input formControlName="numero"></ion-input>
+      </ion-item>
+    </ion-row>
+    <ion-row>
+      <ion-item>
+        <ion-label position="floating">CEP</ion-label>
+        <ion-input formControlName="cep"></ion-input>
+      </ion-item>
+    </ion-row>
+    <ion-row>
+      <ion-item>
+        <ion-label position="floating">bairro</ion-label>
+        <ion-input formControlName="bairro"></ion-input>
+      </ion-item>
+    </ion-row>
+    <ion-row>
+      <ion-item>
+        <ion-label position="floating">cidade</ion-label>
+        <ion-input formControlName="cidade"></ion-input>
+      </ion-item>
+    </ion-row>
+    <ion-row>
+      <ion-item>
+        <ion-label position="floating">estado</ion-label>
+        <ion-input formControlName="estado"></ion-input>
+      </ion-item>
+    </ion-row>
+  </ion-grid> -->
+</ion-content>

@@ -1,0 +1,40 @@
+<!-- <ion-item>
+  <ion-label>
+    <h2>Codigo de encomenda: {{ encomenda.codigoEncomenda }}</h2>
+    <h3>Destinatário: {{ encomenda.destinatario.nome }}</h3>
+    <div>
+      Estado: {{ encomenda.endereco.estado }} | Cidade:
+      {{ encomenda.endereco.cidade }}
+      | Bairro
+      {{ encomenda.endereco.bairro }}
+    </div>
+    <div>
+      Endereço: {{ encomenda.endereco.rua }} nº
+      {{ encomenda.endereco.numero }}
+    </div>
+    <div>CEP: {{ encomenda.endereco.cep }}</div>
+    <ion-buttons class="ion-justify-content-center ion-margin-top">
+      <ion-button color="primary" (click)="confirmarEntrega()"
+        >Confirmar entrega</ion-button
+      >
+    </ion-buttons>
+  </ion-label>
+</ion-item> -->
+
+<ion-item>
+  <ion-label>
+    <h2>Codigo de encomenda: {{ encomenda.codigoEncomenda }}</h2>
+    <h3>Destinatário: {{ encomenda.destinatario.nome }}</h3>
+    <h2>CEP: {{ encomenda.endereco.cep }}</h2>
+    <h2>{{ encomenda.endereco.rua + " - " + encomenda.endereco.numero }},</h2>
+    <h3>
+      {{ encomenda.endereco.bairro }}, {{ encomenda.endereco.cidade }} -
+      {{ encomenda.endereco.estado }}
+    </h3>
+    <ion-buttons class="ion-justify-content-center ion-margin-top">
+      <ion-button color="primary" (click)="confirmarEntrega()"
+        >Confirmar entrega</ion-button
+      >
+    </ion-buttons>
+  </ion-label>
+</ion-item>

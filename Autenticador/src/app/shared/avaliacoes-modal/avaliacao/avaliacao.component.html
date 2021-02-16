@@ -1,0 +1,53 @@
+<ion-card>
+  <!-- <ion-card>
+    <ion-card-title class="ion-padding-start ion-padding-top">{{
+      editable ? "Avalie a entrega" : "Avaliação da entrega"
+    }}</ion-card-title>
+    <ion-card-content>
+      <app-star-rating
+        (rating)="onRatingChange($event)"
+        [editable]="editable"
+        [stars]="avaliacao.nota"
+      ></app-star-rating>
+      <ion-item class="ion-no-padding">
+        <ion-label position="stacked">Descrição</ion-label>
+        <ion-textarea
+          [disabled]="!editable"
+          [(ngModel)]="avaliacao.descricao"
+          placeholder="Descreve a sua experiência com esta entrega."
+        >
+        </ion-textarea>
+      </ion-item>
+    </ion-card-content>
+  </ion-card> -->
+  <ion-card>
+    <ion-card-title class="ion-padding-start ion-padding-top">{{
+      title
+    }}</ion-card-title>
+    <ion-card-content>
+      <app-star-rating
+        (rating)="onRatingChange($event)"
+        [editable]="editable"
+        [stars]="avaliacao.nota"
+      ></app-star-rating>
+      <ion-item class="ion-no-padding">
+        <ion-label position="stacked">Descrição</ion-label>
+        <ion-textarea
+          [disabled]="!editable"
+          [(ngModel)]="avaliacao.descricao"
+          [placeholder]="descricao"
+        >
+        </ion-textarea>
+      </ion-item>
+      <div class="ion-text-center">
+        <ion-button
+          class="ion-margin-top"
+          *ngIf="editable"
+          color="primary"
+          (click)="sendAvalicao()"
+          >Enviar</ion-button
+        >
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-card>

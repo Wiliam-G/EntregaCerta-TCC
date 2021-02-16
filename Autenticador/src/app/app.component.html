@@ -1,0 +1,53 @@
+<ion-app>
+  <ion-menu side="start" menuId="m1">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>
+          entregaCerta
+        </ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-menu-toggle>
+          <ion-item lines="none" button routerLink="/encomendas">
+            <!-- <ion-icon name="qr-code-outline" slot="start"></ion-icon> -->
+            <mat-icon aria-hidden="false" aria-label="Example home icon" slot="start">local_shipping</mat-icon>
+            <ion-label>Encomendas</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item lines="none" button routerLink="/codigo-identificacao">
+            <ion-icon name="qr-code-outline" slot="start"></ion-icon>
+            <ion-label>Codigo de identificação</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item lines="none" button routerLink="/recebedores">
+            <ion-icon name="people" slot="start"></ion-icon>
+            <ion-label>Recebedores</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item lines="none" routerLink="/dados-pessoais">
+            <ion-icon name="person-circle-outline" slot="start"></ion-icon>
+            <ion-label>Dados pessoais</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item lines="none" routerLink="/enderecos">
+            <ion-icon name="location-outline" slot="start"></ion-icon>
+            <ion-label>Enderecos</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item lines="none" button>
+            <ion-icon name="exit" slot="start"></ion-icon>
+            <ion-label>Logout</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet main></ion-router-outlet>
+</ion-app>

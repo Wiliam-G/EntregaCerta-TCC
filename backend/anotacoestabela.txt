@@ -1,0 +1,23 @@
+------ ANOTAÇÕES DE APOIO PARA A CRIAÇÃO DE TABELAS ------
+
+--- TABELAS ---(OK)
+ - enderecos(OK) 		-- FK - NÃO TEM
+ - usuarios(OK) 		-- FK - idEndereco(OK) / idUsuarioEncomenda(OK)
+ - empresas(OK) 		-- FK - NÃO TEM
+ - funcionarios(OK) 		-- FK - idEmpresa(OK)
+ - encomendas(OK)		-- FK - idFuncionario(OK) / idUsuarioEncomenda(OK)
+ - entregas(OK)			-- FK - idEncomenda(OK)
+ - usuarioencomendas(OK) 	-- FK - idUsuario(OK) / idEncomenda(OK)
+
+
+--- RELACIONAMENTOS ---(NOT OK)
+
+ - UM endereco    POSSUI     MUITOS usuarios	(OK)
+ - UM usuario  	  PERTENCE a UM endereco	(OK)
+ - UMA empresa 	  POSSUI     MUITOS funcionarios(OK)
+ - UM funcionario PERTENCE a UMA empresa	(OK)
+ - UM funcionario POSSUI     MUITAS encomendas  (OK)
+ - UMA encomenda  PERTENCE a UM funcionario	(OK)
+ - UMA encomenda  POSSUI     MUITAS entregas	(OK)
+ - UMA entrega 	  PERTENCE a UMA encomenda	(OK)
+ - VER COMO SERÁ RESOLVIDO O RELACIONAMENTO MUITOS PARA MUITOS(resolvido)

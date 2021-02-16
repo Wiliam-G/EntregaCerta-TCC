@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Codigo de identificação</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="ion-text-center">
+        <ngx-qrcode [elementType]="elementType" [value]="value" scale="15">
+        </ngx-qrcode>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-margin" style="color: gray">
+      <div>* Este código é usado para:</div>
+      <div style="margin-left: 15px; color: gray;">Confirmar suas encomendas</div>
+      <div style="margin-left: 15px; color: gray">Ser cadastrado como um recebedor</div>
+      <p></p>
+    </ion-row>
+  </ion-grid>
+</ion-content>

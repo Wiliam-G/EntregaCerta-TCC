@@ -1,0 +1,88 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Encomenda: {{ encomenda.codigoEncomenda }}</ion-title>
+    <ion-buttons slot="primary" (click)="onCancel()">
+      <ion-button>
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-text> Destinatário: {{ encomenda.destinatario }} </ion-text>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-text>
+          Código da encomenda: {{ encomenda.codigoEncomenda }}
+        </ion-text>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-text> Data de envio: {{ encomenda.dataEnvio | date }} </ion-text>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-text>
+          Data de entrega: {{ encomenda.dataEntrega | date }}
+        </ion-text>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-text> Entregador: {{ encomenda.entregador }} </ion-text>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        Estado: {{ encomenda.endereco.estado.toUpperCase() }} | Cidade:
+        {{ encomenda.endereco.cidade.toUpperCase() }} | Bairro
+        {{ encomenda.endereco.bairro.toUpperCase() }}
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        Endereço: {{ encomenda.endereco.nome }} nº
+        {{ encomenda.endereco.cep }}
+      </ion-col>
+    </ion-row>
+    <ion-row
+      ><ion-col>CEP: {{ encomenda.endereco.cep }}</ion-col></ion-row
+    >
+    <ion-row>
+      <ion-col>
+        <div
+          style="
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          "
+        >
+          <span style="vertical-align: center;">GOOGLE MAPS</span>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="ion-text-center">
+        <ion-button color="primary" (click)="scan()">
+          Scannear Código do destinatário
+        </ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-text-center">
+      <ion-col>QRCode Texto: {{ data }} </ion-col>
+      <ion-col>QRCode Texto: {{ teste }} </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
